@@ -23,4 +23,11 @@ public class UserTest {
         userMapper.insertSelective(user);
     }
 
+    @Test
+    public void testFindUser() {
+        EnjoyUser enjoy = userMapper.findByUsernameAndPasswd("enjoy", "123");
+        System.out.println(enjoy);
+    }
+
+
 }

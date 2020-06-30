@@ -1,6 +1,7 @@
 package com.wang.dao;
 
 import com.wang.domain.EnjoyUser;
+import org.apache.ibatis.annotations.Param;
 
 public interface EnjoyUserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +15,6 @@ public interface EnjoyUserMapper {
     int updateByPrimaryKeySelective(EnjoyUser record);
 
     int updateByPrimaryKey(EnjoyUser record);
+
+    EnjoyUser findByUsernameAndPasswd(@Param("username") String username, @Param("passwd") String passwd);
 }
