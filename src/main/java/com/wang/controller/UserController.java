@@ -39,4 +39,10 @@ public class UserController {
         }
     }
 
+    @RequestMapping("/batchAdd")
+    public String batchAdd(String username, String passwd) {
+        iUserService.batchAdd(username, passwd);
+        return "成功";
+    }
+
 }
