@@ -1,6 +1,8 @@
 package com.wang.controller;
 
 import com.wang.service.IUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,12 +11,15 @@ import javax.annotation.Resource;
 @RestController
 public class UserController {
 
+    private Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @Resource
     private IUserService iUserService;
 
     @RequestMapping("/hello")
     public String hello() {
-        return "hello";
+        logger.debug("hello日志");
+        return "hello4";
     }
 
     @RequestMapping("/login")
